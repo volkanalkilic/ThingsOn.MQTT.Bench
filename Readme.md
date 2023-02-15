@@ -26,7 +26,7 @@ ThingsOn MQTT Bench is a sipmle Cross-platform .NET Core benchmark tool for MQTT
 
 ## Usage
 
-To use ThingsOn MQTT Bench, first make sure that you have .NET 7 installed on your system. Then, download the latest release of ThingsOn MQTT Bench for your operating system from the [releases page](https://github.com/yourusername/ThingsOn-MQTT-Bench/releases).
+To use ThingsOn MQTT Bench, first make sure that you have .NET 7 installed on your system. Then, download the latest release of ThingsOn MQTT Bench for your operating system from the [releases page](https://github.com/volkanalkilic/ThingsOn.MQTT.Bench/releases).
 
 Once you have downloaded the tool, you can run it from the command line by navigating to the directory where the tool is located and running the following command:
 
@@ -85,7 +85,7 @@ dotnet run --project ThingsOn.MQTT.Bench
 
 ## Contributing
 
-Contributions to ThingsOn MQTT Bench are welcome! If you find a bug or would like to suggest a new feature, please open an issue on the [GitHub repository](https://github.com/yourusername/ThingsOn-MQTT-Bench).
+Contributions to ThingsOn MQTT Bench are welcome! If you find a bug or would like to suggest a new feature, please open an issue on the [GitHub repository](https://github.com/volkanalkilic/ThingsOn.MQTT.Bench).
 
 If you would like to contribute code to ThingsOn MQTT Bench, please fork the repository and submit a pull request.
 
