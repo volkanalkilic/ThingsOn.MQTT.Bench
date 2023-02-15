@@ -2,7 +2,7 @@
 
 ThingsOn MQTT Bench is a sipmle commandline benchmark tool for MQTT brokers. It measures the maximum number of messages that can be sent by the broker in a specified amount of time.
 
-![ThingsOnMQTTBenchmin.gif](https://github.com/volkanalkilic/ThingsOn.MQTT.Bench/blob/main/ThingsOn-MQTT-Bench-min.gif)
+![ThingsOnMQTTBenchmin.gif](https://github.com/volkanalkilic/ThingsOn.MQTT.Bench/blob/main/ThingsOn.MQTT.Bench-min.gif)
 
 ## Features
 
