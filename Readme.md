@@ -1,8 +1,8 @@
 # ThingsOn MQTT Bench
 
-![ThingsOnMQTTBenchmin.gif](assets/ThingsOn-MQTT-Bench-min.gif)
+ThingsOn MQTT Bench is a sipmle commandline benchmark tool for MQTT brokers. It measures the maximum number of messages that can be sent by the broker in a specified amount of time.
 
-ThingsOn MQTT Bench is a benchmark tool for MQTT brokers. It measures the maximum number of messages that can be sent by the broker in a specified amount of time.
+![ThingsOnMQTTBenchmin.gif](https://github.com/volkanalkilic/ThingsOn.MQTT.Bench/blob/main/ThingsOn-MQTT-Bench-min.gif)
 
 ## Features
 
@@ -30,8 +30,10 @@ To use ThingsOn MQTT Bench, first make sure that you have .NET 7 installed on yo
 
 Once you have downloaded the tool, you can run it from the command line by navigating to the directory where the tool is located and running the following command:
 
-<pre><div class="bg-black mb-4 rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans"><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs">dotnet ThingsOnMqttBench.dll
-</code></div></div></pre>
+```bash
+dotnet ThingsOn.MQTT.Bench.dll
+
+```
 
 By default, the tool will read its settings from a TOML file named `config.toml` in the same directory as the tool. You can customize the settings by editing this file.
 
@@ -63,23 +65,25 @@ To build ThingsOn MQTT Bench from code, follow these steps:
 1. Install [.NET 7](https://dotnet.microsoft.com/download/dotnet/7.0).
 2. Clone the GitHub repository:
 
-<pre><div class="bg-black mb-4 rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans"><span class="">bash</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-bash">git clone https://github.com/your-username/ThingsOn-MQTT-Bench.git
-</code></div></div></pre>
+```bash
+git clone https://github.com/volkanalkilic/ThingsOn.MQTT.Bench.git
+
+```
 
 3. Navigate to the cloned repository directory:
-
-<pre><div class="bg-black mb-4 rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans"><span class="">bash</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-bash">cd ThingsOn-MQTT-Bench
-</code></div></div></pre>
-
 4. Build the project using the following command:
 
-<pre><div class="bg-black mb-4 rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans"><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs">dotnet build
-</code></div></div></pre>
+```bash
+dotnet build
+
+```
 
 5. Once the project has built successfully, you can run the benchmark using the following command:
 
-<pre><div class="bg-black mb-4 rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans"><span class="">css</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-css">dotnet run --project ThingsOnMqttBench
-</code></div></div></pre>
+```bash
+dotnet run --project ThingsOn.MQTT.Bench
+
+```
 
 ## Contributing
 
@@ -87,6 +91,12 @@ Contributions to ThingsOn MQTT Bench are welcome! If you find a bug or would lik
 
 If you would like to contribute code to ThingsOn MQTT Bench, please fork the repository and submit a pull request.
 
+## Built With
+
+* [.NET Core](https://dotnet.microsoft.com/) - The .NET framework used
+* [MQTTnet](https://github.com/chkr1011/MQTTnet) - The MQTT library used
+* [Nett](https://github.com/paiden/Nett) - The TOML library used
+
 ## License
 
-ThingsOn MQTT Bench is licensed under the MIT license. See the [LICENSE](https://chat.openai.com/chat/LICENSE) file for more information.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/volkanalkilic/Mqtt-File-Uploader/blob/main/LICENSE.md) file for details.

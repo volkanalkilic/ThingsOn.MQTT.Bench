@@ -18,6 +18,7 @@
       <Content Include="config.toml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
+      <None Remove=".gitignore" />
     </ItemGroup>
 
 </Project>
