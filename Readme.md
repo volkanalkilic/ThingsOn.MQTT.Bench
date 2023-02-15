@@ -1,6 +1,6 @@
 # ThingsOn MQTT Bench
 
-ThingsOn MQTT Bench is a sipmleCross-platform .NET Core benchmark tool for MQTT brokers. It measures the maximum number of messages that can be sent to the broker in a specified amount of time.
+ThingsOn MQTT Bench is a sipmle Cross-platform .NET Core benchmark tool for MQTT brokers. It measures the maximum number of messages that can be sent to the broker in a specified amount of time.
 
 ![ThingsOnMQTTBenchmin.gif](https://github.com/volkanalkilic/ThingsOn.MQTT.Bench/blob/main/ThingsOn.MQTT.Bench-min.gif)
 
