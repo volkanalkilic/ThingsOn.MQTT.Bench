@@ -1,12 +1,12 @@
 # ThingsOn MQTT Bench
 
-ThingsOn MQTT Bench is a sipmle commandline benchmark tool for MQTT brokers. It measures the maximum number of messages that can be sent by the broker in a specified amount of time.
+ThingsOn MQTT Bench is a sipmleCross-platform .NET Core benchmark tool for MQTT brokers. It measures the maximum number of messages that can be sent to the broker in a specified amount of time.
 
 ![ThingsOnMQTTBenchmin.gif](https://github.com/volkanalkilic/ThingsOn.MQTT.Bench/blob/main/ThingsOn.MQTT.Bench-min.gif)
 
 ## Features
 
-* Measures the maximum number of messages that can be sent by an MQTT broker in a specified amount of time.
+* Measures the maximum number of messages that can be sent to an MQTT broker in a specified amount of time.
 * Supports MQTT brokers running MQTT protocol versions 3.1.1 (MQTTv3.1.1) and 5.0 (MQTTv5.0).
 * Allows customization of the following benchmark settings:
   * Number of MQTT clients to use for benchmarking
@@ -47,10 +47,8 @@ The following settings are available in the `config.toml` file:
   * `MqttVersion`: MQTT protocol version (either "V311" or "V500")
   * `Username`: Username for connecting to the MQTT broker
   * `Password`: Password for connecting to the MQTT broker
-  * `ClientIdPrefix`: Prefix for MQTT client IDs
   * `KeepAlivePeriod`: Keep-alive period in seconds
   * `CleanSession`: Whether to use a clean session when connecting to the MQTT broker
-  * `MaximumQoS`: Maximum quality of service level for messages
 * `Benchmark`: Benchmark settings
   * `ClientCount`: Number of MQTT clients to use for benchmarking
   * `MessageCount`: Number of messages to send per client
