@@ -1,0 +1,20 @@
+2023-02-16 10:50:41,563 [1] INFO ThingsOn_MQTT_Bench.Program - Benchmark started
+2023-02-16 10:50:41,618 [1] INFO ThingsOn_MQTT_Bench.Program - Benchmark settings: 50 clients, 10000 messages/client, 100 bytes/message, QoS 0, retain False, MQTT version V500.
+2023-02-16 10:50:41,618 [1] INFO ThingsOn_MQTT_Bench.Program - Server URI: 127.0.0.1
+2023-02-16 10:50:41,619 [1] INFO ThingsOn_MQTT_Bench.Program - Port: 1883
+2023-02-16 10:50:41,619 [1] INFO ThingsOn_MQTT_Bench.Program - Clean session: True
+2023-02-16 10:50:41,621 [1] INFO ThingsOn_MQTT_Bench.Program - User name: 
+2023-02-16 10:50:41,621 [1] INFO ThingsOn_MQTT_Bench.Program - Password: (empty)
+2023-02-16 10:50:41,621 [1] INFO ThingsOn_MQTT_Bench.Program - Keep alive period: 00:01:00
+2023-02-16 10:50:41,622 [1] INFO ThingsOn_MQTT_Bench.Program - Connection timeout: 00:00:01
+2023-02-16 10:50:43,745 [26] ERROR ThingsOn_MQTT_Bench.Program - An error occurred: Error while connecting with host '127.0.0.1:1883'.
+2023-02-16 10:53:45,899 [1] INFO ThingsOn_MQTT_Bench.Program - Benchmark started
+2023-02-16 10:53:45,954 [1] INFO ThingsOn_MQTT_Bench.Program - Benchmark settings: 50 clients, 10000 messages/client, 100 bytes/message, QoS 0, retain False, MQTT version V500.
+2023-02-16 10:53:45,955 [1] INFO ThingsOn_MQTT_Bench.Program - Server URI: 127.0.0.1
+2023-02-16 10:53:45,955 [1] INFO ThingsOn_MQTT_Bench.Program - Port: 1883
+2023-02-16 10:53:45,955 [1] INFO ThingsOn_MQTT_Bench.Program - Clean session: True
+2023-02-16 10:53:45,956 [1] INFO ThingsOn_MQTT_Bench.Program - User name: 
+2023-02-16 10:53:45,956 [1] INFO ThingsOn_MQTT_Bench.Program - Password: (empty)
+2023-02-16 10:53:45,956 [1] INFO ThingsOn_MQTT_Bench.Program - Keep alive period: 00:01:00
+2023-02-16 10:53:45,957 [1] INFO ThingsOn_MQTT_Bench.Program - Connection timeout: 00:00:01
+2023-02-16 10:53:48,100 [13] ERROR ThingsOn_MQTT_Bench.Program - An error occurred: Error while connecting with host '127.0.0.1:1883'.

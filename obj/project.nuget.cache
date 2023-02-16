@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ey9RpvMEd1f1ztQiLU9D/KYBOdQhv/5K9p7hzTadjbswMzv+Duf1Gk5hdyjG9w4Z+sZydIcs4u5OfyAvLp9Xug==",
+  "success": true,
+  "projectFilePath": "D:\\repos\\ThingsOn.MQTT.Bench\\ThingsOn.MQTT.Bench.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\AkosCsiszar\\.nuget\\packages\\log4net\\2.0.15\\log4net.2.0.15.nupkg.sha512",
+    "C:\\Users\\AkosCsiszar\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\AkosCsiszar\\.nuget\\packages\\mqttnet\\4.1.4.563\\mqttnet.4.1.4.563.nupkg.sha512",
+    "C:\\Users\\AkosCsiszar\\.nuget\\packages\\nett\\0.15.0\\nett.0.15.0.nupkg.sha512",
+    "C:\\Users\\AkosCsiszar\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",
+    "C:\\Users\\AkosCsiszar\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\AkosCsiszar\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.5.0\\system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
+    "C:\\Users\\AkosCsiszar\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
+    "C:\\Users\\AkosCsiszar\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,15 +1,26 @@
 ﻿using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+using log4net;
+using log4net.Config;
 using MQTTnet;
 using MQTTnet.Client;
 using MQTTnet.Formatter;
 using MQTTnet.Protocol;
 using Nett;
 
+
+
 namespace ThingsOn_MQTT_Bench {
     internal class Program {
 
         // Entry point of the program
         private static async Task Main() {
+            
+            var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
+            XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
+
+            ILog log = log4net.LogManager.GetLogger(typeof(Program));
             
             // Prompt the user to start a new benchmark
             Console.Write("Do you want to start a new benchmark? (y/n): ");
@@ -18,12 +29,11 @@ namespace ThingsOn_MQTT_Bench {
             // Run the benchmark if the user answers "y"
             if (answer?.ToLower() == "y") {
                 try {
+                    log.Info("Benchmark started");
                     await RunBenchmark();
                 }
                 catch (Exception ex) {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"An error occurred: {ex.Message}");
-                    Console.ResetColor();
+                    log.Error($"An error occurred: {ex.Message}");
                 }
             }
 
@@ -31,7 +41,7 @@ namespace ThingsOn_MQTT_Bench {
             async Task RunBenchmark() {
                 // Load benchmark settings
                 var (settings, serverUri, port, cleanSession, userName, password, keepAlivePeriod, connectionTimeOut,
-                    mqttVersion, clientCount, messageCount, messageSize, qos, retain) = LoadSettings();
+                    mqttVersion, clientCount, messageCount, messageSize, qos, retain) = LoadSettings(log);
 
                 // Create MQTT clients
                 var factory = new MqttFactory();
@@ -103,16 +113,16 @@ namespace ThingsOn_MQTT_Bench {
                 var elapsedDisconnect = stopwatchDisconnect.Elapsed;
 
                 // Print results
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Benchmark completed 🚀");
-                Console.WriteLine("=======================================");
-                Console.WriteLine($"{"Messages sent",-20} {messagesSent:N0}");
-                Console.WriteLine($"{"Elapsed time",-20} {elapsed.TotalSeconds:F3}");
-                Console.WriteLine($"{"Throughput",-20} {throughput:N0} messages/second");
-                Console.WriteLine($"{"Connect time",-20} {elapsedConnect.TotalSeconds:F3} seconds");
-                Console.WriteLine($"{"Disconnect time",-20} {elapsedDisconnect.TotalSeconds:F3} seconds");
-                Console.WriteLine($"{"Success rate",-20} {successRate:P0}");
-                Console.WriteLine($"{"Loss rate",-20} {lossRate:P0}");
+                
+                log.Info("Benchmark completed 🚀");
+                log.Info("=======================================");
+                log.Info($"{"Messages sent",-20} {messagesSent:N0}");
+                log.Info($"{"Elapsed time",-20} {elapsed.TotalSeconds:F3}");
+                log.Info($"{"Throughput",-20} {throughput:N0} messages/second");
+                log.Info($"{"Connect time",-20} {elapsedConnect.TotalSeconds:F3} seconds");
+                log.Info($"{"Disconnect time",-20} {elapsedDisconnect.TotalSeconds:F3} seconds");
+                log.Info($"{"Success rate",-20} {successRate:P0}");
+                log.Info($"{"Loss rate",-20} {lossRate:P0}");
 
                 // Convert data size to appropriate units
                 var dataSize = (double) (totalMessagesSent * settings.Get<int>("MessageSize"));
@@ -123,16 +133,16 @@ namespace ThingsOn_MQTT_Bench {
                     dataUnitIndex++;
                 }
 
-                Console.WriteLine($"{"Data sent",-20} {dataSize:N3} {dataUnits[dataUnitIndex]}");
-                Console.WriteLine("=======================================");
-                Console.ResetColor();
+                log.Info($"{"Data sent",-20} {dataSize:N3} {dataUnits[dataUnitIndex]}");
+                log.Info("=======================================");
+                
 
                 // Prompt the user to run the benchmark again
                 await Main();
             }
         }
 
-        private static (TomlTable settings, string serverUri, int port, bool cleanSession, string userName, string password, TimeSpan keepAlivePeriod, TimeSpan connectionTimeOut, MqttProtocolVersion mqttVersion, int clientCount, int messageCount, int messageSize, int qos, bool retain) LoadSettings() {
+        private static (TomlTable settings, string serverUri, int port, bool cleanSession, string userName, string password, TimeSpan keepAlivePeriod, TimeSpan connectionTimeOut, MqttProtocolVersion mqttVersion, int clientCount, int messageCount, int messageSize, int qos, bool retain) LoadSettings(ILog log) {
             // Load settings from config.toml
             var settings = Toml.ReadFile(Path.Combine(Directory.GetCurrentDirectory(), "config.toml"));
 
@@ -152,15 +162,15 @@ namespace ThingsOn_MQTT_Bench {
             var retain = settings.Get<bool>("Retain");
 
             // Print benchmark settings
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine($"Benchmark settings: {clientCount} clients, {messageCount} messages/client, {messageSize:N0} bytes/message, QoS {qos}, retain {retain}, MQTT version {mqttVersion}.");
-            Console.WriteLine($"Server URI: {serverUri}");
-            Console.WriteLine($"Port: {port}");
-            Console.WriteLine($"Clean session: {cleanSession}");
-            Console.WriteLine($"User name: {userName}");
-            Console.WriteLine(!string.IsNullOrEmpty(password) ? $"Password: {password[0]}{new string('*', password.Length - 1)}" : "Password: (empty)");
-            Console.WriteLine($"Keep alive period: {keepAlivePeriod}");
-            Console.WriteLine($"Connection timeout: {connectionTimeOut}");
+            
+            log.Info($"Benchmark settings: {clientCount} clients, {messageCount} messages/client, {messageSize:N0} bytes/message, QoS {qos}, retain {retain}, MQTT version {mqttVersion}.");
+            log.Info($"Server URI: {serverUri}");
+            log.Info($"Port: {port}");
+            log.Info($"Clean session: {cleanSession}");
+            log.Info($"User name: {userName}");
+            log.Info(!string.IsNullOrEmpty(password) ? $"Password: {password[0]}{new string('*', password.Length - 1)}" : "Password: (empty)");
+            log.Info($"Keep alive period: {keepAlivePeriod}");
+            log.Info($"Connection timeout: {connectionTimeOut}");
             Console.ResetColor();
             return (settings, serverUri, port, cleanSession, userName, password, keepAlivePeriod, connectionTimeOut, mqttVersion, clientCount, messageCount, messageSize, qos, retain);
         }

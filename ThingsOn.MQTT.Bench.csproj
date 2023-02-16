@@ -9,6 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="log4net" Version="2.0.15" />
       <PackageReference Include="MQTTnet" Version="4.1.4.563" />
       <PackageReference Include="Nett" Version="0.15.0" />
     </ItemGroup>
@@ -19,6 +20,9 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
       <None Remove=".gitignore" />
+      <None Update="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     </ItemGroup>
 
 </Project>
