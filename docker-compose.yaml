@@ -1,0 +1,41 @@
+version: "3.9"
+networks:
+  example_network:
+    driver: bridge
+
+services: 
+  mqtt:
+    image: eclipse-mosquitto
+    volumes:
+      - ./mosquitto/conf:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    ports:
+      - 1883:1883
+      - 9001:9001
+    networks:
+      - example_network
+
+  thingson-mqtt-bench:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    depends_on:
+    - mqtt
+    environment:
+      - ThingsOnMQTTBenchContainerized=true
+      - ServerUri=mqtt
+      - Port=1883
+      - MqttVersion=V500
+      - Username=
+      - Password=
+      - ConnectionTimeOut=1
+      - KeepAlivePeriod=60
+      - CleanSession=true
+      - ClientCount=50
+      - MessageCount=10000
+      - MessageSize=100
+      - Qos=0                         
+      - Retain=false
+    networks:
+        - example_network
